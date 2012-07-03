@@ -1,0 +1,120 @@
+Costume:
+
+XBee Module - Series 01 - XB24-AWI-001	$23
+https://www.adafruit.com/products/128
+
+XBee Adapter 							$10
+https://www.adafruit.com/products/126
+
+El Escudo 8-ch EL Arduino Shield		$20
+https://www.sparkfun.com/products/9259
+
+EL Converter 12v 10~15M	 (45feet)		$15
+https://www.sparkfun.com/products/10469
+
+Arduino									$30
+https://www.adafruit.com/products/50
+
+Stackable Header Pins for Arduino		$ 2
+https://www.sparkfun.com/products/10007
+
+EL Wire Yellow 10 feet					$10
+https://www.sparkfun.com/products/10192
+quantity 8
+
+4 AA Battery Holder						$ 2
+https://www.sparkfun.com/products/552
+quantity 2
+
+JST 6" Jumper Wire & Mate				$ 1
+https://www.sparkfun.com/products/9914
+quantity 10
+
+Costume: $193
+
+
+
+One-off Parts:
+
+Heatshrink Kit							$ 8
+https://www.sparkfun.com/products/9353
+
+Black hook-up Wire						$ 3
+https://www.adafruit.com/products/290
+
+
+
+Server:
+
+XBee Module - Series 01 - XB24-AWI-001	$23
+https://www.adafruit.com/products/128
+
+USB XBee Adapter						$20
+https://www.adafruit.com/products/247
+
+Server:  $54
+
+
+adafruit: $12 shipping / $120.65 total
+sparkfun: $10 shipping / $147.75 total
+
+
+9600,8n1, no flow control. local echo, append lf to cr.
+connect (hit enter to make connection in terminal)
++++ (no enter) get OK
+AT (enter) get OK
+
+ATID = get "Personal Area Network ID"   (3332)
+ATBD = get baud rate (3=9600,4=19200,5=38400,6=57600)   (6)
+ATWR = Write shit to chip
+ATRR = Retry Rate, 0~6.  6 = more retries, 0 = none.
+ATCH = 2.4ghz channel ID.  Default is "C" (aka 0x0C, "12") (Range is 0C(12),0D,0E,0F,10,11,12,13,14,15,16,17,18,19,1A(26)) 
+ATCN = get out of this command shit.
+ATRE = reset to default values 
+ATMY = my address, defaults to "0".  (0)
+ATDL = "destination low" where I should broadcast to. default "0", "FFFF" to broadcast to everyone no matter what.
+ATND = hey, show me all radios and stuff. ("node discovery") (my address \n serial# \n noun name \n RSSI level)
+ATNI = "node identifier" set a normal name to a radio.  ATN1 My Radio Name
+ATED = Show me noise "energy detect" of channels! (find open channel, higher number cleaner channel)
+ATDB = "show me most recent recieved db level" (higher better) (do 2-way comm, +++, ATDB)
+
+20120206: going ATCH19RR6
+
+
+20120329 program code is going to be:
+	connect at 9600,8n1, no flow, local echo, append lf to cr.
+		ATCH19
+		ATRR3  (just do 3 repeats of each broadcast)
+		ATBD6
+		ATID1337
+		ATCE1 (only for the PC transmitter)
+		ATCE0 (ATCE0 for the costume receivers)
+		//ATA24 (transmitter for no energy scan, do allow association.)
+		//ATA14 (receivers associate only to proper PAN ID and channel)
+		ATA10 (fuck assoc.)
+		ATA20 (fuck assoc.)
+		ATNI Presence Costume [octive 0-7]
+		ATDLFFFF (broadcast shit)
+		WR
+	reconnect at 57600
+		ATNI
+		ATBD
+		ATCH
+		ATRR
+
+
+Status light on El Escudo:  I'm getting MIDI data, regardless if its "for me" or not.
+Green light on radio:  Blinking means power.
+Red light on radio: solid when "I hear my base station" / Off when "no transmission"
+
+(Transmitter: No blue light anymore since its just blindly broadcasting)
+
+
+for me to buy now:
+(a) Parallax usb xbee board
+(s) 2 el escudos
+(s) 3~4 jst pairs
+(a) ?1 arduino
+(a) 2 adafruit xbee radio adapters (or 1 and 1 xbee rail)
+(a) 1 xbee radio
+
