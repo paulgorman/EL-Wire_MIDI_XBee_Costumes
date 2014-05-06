@@ -118,3 +118,11 @@ for me to buy now:
 (a) 2 adafruit xbee radio adapters (or 1 and 1 xbee rail)
 (a) 1 xbee radio
 
+
+20121101:
+ Due to "not working right" in real life:
+  New XBee Pro S1 @ 63mW transmitter
+  All radios moved to Channel 0x17
+  ATCH17
+  ATRR3
+  ATWR
