@@ -4,6 +4,8 @@
  //  20120329
  //  tech@sbeyer.com
  //  Octave 5 (Notes 60~71, I use notes 61-68)
+ //  Updated 20140506 for new/replacement board, now an "EL Sequencer"
+ //  LED status pin now 13 instead of 10.
  */
 
 #include <EL_Escudo.h>
@@ -118,45 +120,45 @@ void playNote(byte note, byte velocity){
 
 void blinkAwake() {
   // .--.  .-.  .  ...  .  -.  -.-.  . 
-  digitalWrite(10,HIGH);
-  delay(100); // .
-  digitalWrite(10, LOW);
-  delay(100);
-  digitalWrite(10,HIGH);
-  delay(300); // -
-  digitalWrite(10,LOW);
-  delay(100);
-  digitalWrite(10,HIGH);
-  delay(300); // -
-  digitalWrite(10,LOW);
-  delay(100);
-  digitalWrite(10, HIGH);
-  delay(100); // .
-  digitalWrite(10, LOW);
-  delay(300); //letter break
-  digitalWrite(10, HIGH);
-  delay(300); // .
-  digitalWrite(10,LOW);
-  delay(100);
-  digitalWrite(10, HIGH);
-  delay(300); // -
-  digitalWrite(10,LOW);
-  delay(100);
-  digitalWrite(10,HIGH);
-  delay(100); // .
-  digitalWrite(10,LOW);
-  delay(300); // letter break
-  digitalWrite(10,HIGH);
-  delay(100); // .
-  digitalWrite(10,LOW);
-  delay(100);
-  digitalWrite(10,HIGH);
-  delay(100); // .
-  digitalWrite(10,LOW);
-  delay(100);
-  digitalWrite(10,HIGH);
-  delay(100); // .
-  digitalWrite(10,LOW);
+  digitalWrite(13,HIGH);
+  delay(200); // .
+  digitalWrite(13, LOW);
+  delay(200);
+  digitalWrite(13,HIGH);
+  delay(600); // -
+  digitalWrite(13,LOW);
+  delay(200);
+  digitalWrite(13,HIGH);
+  delay(600); // -
+  digitalWrite(13,LOW);
+  delay(200);
+  digitalWrite(13, HIGH);
+  delay(200); // .
+  digitalWrite(13, LOW);
+  delay(1000); //letter break
+  digitalWrite(13, HIGH);
+  delay(200); // .
+  digitalWrite(13,LOW);
+  delay(200);
+  digitalWrite(13, HIGH);
+  delay(600); // -
+  digitalWrite(13,LOW);
+  delay(200);
+  digitalWrite(13,HIGH);
+  delay(200); // .
+  digitalWrite(13,LOW);
+  delay(1000); // letter break
+  digitalWrite(13,HIGH);
+  delay(200); // .
+  digitalWrite(13,LOW);
+  delay(200);
+  digitalWrite(13,HIGH);
+  delay(200); // .
+  digitalWrite(13,LOW);
+  delay(200);
+  digitalWrite(13,HIGH);
+  delay(200); // .
+  digitalWrite(13,LOW);
   delay(700); // word end
 }
 
