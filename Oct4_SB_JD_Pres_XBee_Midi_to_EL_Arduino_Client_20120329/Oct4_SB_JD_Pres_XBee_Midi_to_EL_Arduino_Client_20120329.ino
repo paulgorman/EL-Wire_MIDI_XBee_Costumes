@@ -4,6 +4,8 @@
  //  20120329
  //  tech@sbeyer.com
  //  Octave 4 (Notes 48~59, I use notes 49-56)
+ //  Updated 20160328 for new/replacement board, now an "EL Sequencer"
+ //  LED status pin now 13 instead of 10.
  */
 
 #include <EL_Escudo.h>
@@ -18,7 +20,7 @@ int action=2;   // 0==note off ; 1==note on ; 2==nothing
 
 void setup() {
   Serial.begin(57600);
-  pinMode(10, OUTPUT);
+  pinMode(13, OUTPUT);
   blinkAwake();
   EL.all_off();  // turns off all, but turns on F.
   EL.off(7);  // 7, aka "F"
@@ -118,60 +120,60 @@ void playNote(byte note, byte velocity){
 
 void blinkAwake() {
   // .--.  .-.  .  ...  .  -.  -.-.  . 
-  digitalWrite(10,HIGH);
-  delay(100); // .
-  digitalWrite(10, LOW);
-  delay(100);
-  digitalWrite(10,HIGH);
-  delay(300); // -
-  digitalWrite(10,LOW);
-  delay(100);
-  digitalWrite(10,HIGH);
-  delay(300); // -
-  digitalWrite(10,LOW);
-  delay(100);
-  digitalWrite(10, HIGH);
-  delay(100); // .
-  digitalWrite(10, LOW);
-  delay(300); //letter break
-  digitalWrite(10, HIGH);
-  delay(300); // .
-  digitalWrite(10,LOW);
-  delay(100);
-  digitalWrite(10, HIGH);
-  delay(300); // -
-  digitalWrite(10,LOW);
-  delay(100);
-  digitalWrite(10,HIGH);
-  delay(100); // .
-  digitalWrite(10,LOW);
-  delay(300); // letter break
-  digitalWrite(10,HIGH);
-  delay(100); // .
-  digitalWrite(10,LOW);
-  delay(100);
-  digitalWrite(10,HIGH);
-  delay(100); // .
-  digitalWrite(10,LOW);
-  delay(100);
-  digitalWrite(10,HIGH);
-  delay(100); // .
-  digitalWrite(10,LOW);
+  digitalWrite(13,HIGH);
+  delay(200); // .
+  digitalWrite(13, LOW);
+  delay(200);
+  digitalWrite(13,HIGH);
+  delay(600); // -
+  digitalWrite(13,LOW);
+  delay(200);
+  digitalWrite(13,HIGH);
+  delay(600); // -
+  digitalWrite(13,LOW);
+  delay(200);
+  digitalWrite(13, HIGH);
+  delay(200); // .
+  digitalWrite(13, LOW);
+  delay(1000); //letter break
+  digitalWrite(13, HIGH);
+  delay(200); // .
+  digitalWrite(13,LOW);
+  delay(200);
+  digitalWrite(13, HIGH);
+  delay(600); // -
+  digitalWrite(13,LOW);
+  delay(200);
+  digitalWrite(13,HIGH);
+  delay(200); // .
+  digitalWrite(13,LOW);
+  delay(1000); // letter break
+  digitalWrite(13,HIGH);
+  delay(200); // .
+  digitalWrite(13,LOW);
+  delay(200);
+  digitalWrite(13,HIGH);
+  delay(200); // .
+  digitalWrite(13,LOW);
+  delay(200);
+  digitalWrite(13,HIGH);
+  delay(200); // .
+  digitalWrite(13,LOW);
   delay(700); // word end
-}
+} 
 
 void blinkStatus() {
-  digitalWrite(10,HIGH);
+  digitalWrite(13,HIGH);
   delay(10);
-  digitalWrite(10,LOW);
+  digitalWrite(13,LOW);
 }
 
 void statusGlow(int intOnOff) {
   if (intOnOff) {  // turn on the Status LED
-    digitalWrite(10, HIGH);
+    digitalWrite(13, HIGH);
   } 
   else { // or not.
-    digitalWrite(10, LOW);
+    digitalWrite(13, LOW);
   }
 }
 
