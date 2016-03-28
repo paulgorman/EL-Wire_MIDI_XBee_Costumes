@@ -20,7 +20,7 @@ int action=2;   // 0==note off ; 1==note on ; 2==nothing
 
 void setup() {
   Serial.begin(57600);
-  pinMode(10, OUTPUT);
+  pinMode(13, OUTPUT);
   blinkAwake();
   EL.all_off();  // turns off all, but turns on F.
   EL.off(7);  // 7, aka "F"
@@ -163,17 +163,17 @@ void blinkAwake() {
 }
 
 void blinkStatus() {
-  digitalWrite(10,HIGH);
+  digitalWrite(13,HIGH);
   delay(10);
-  digitalWrite(10,LOW);
+  digitalWrite(13,LOW);
 }
 
 void statusGlow(int intOnOff) {
   if (intOnOff) {  // turn on the Status LED
-    digitalWrite(10, HIGH);
+    digitalWrite(13, HIGH);
   } 
   else { // or not.
-    digitalWrite(10, LOW);
+    digitalWrite(13, LOW);
   }
 }
 
